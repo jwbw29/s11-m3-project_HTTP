@@ -4,7 +4,7 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Movie = (props) => {
-  const { addToFavorites, setMovies } = props;
+  const { favoriteMovies, setFavoriteMovies, setMovies } = props;
 
   const [movie, setMovie] = useState("");
 
@@ -34,6 +34,12 @@ const Movie = (props) => {
       .catch((err) => {
         console.log(err);
       });
+  };
+
+  const handleFavorite = (e) => {
+    e.preventDefault();
+    //on click, add movie to favorites list
+    setFavoriteMovies([...favoriteMovies, movie]);
   };
 
   return (
@@ -75,7 +81,14 @@ const Movie = (props) => {
               </section>
 
               <section>
-                <span className="m-2 btn btn-dark">Favorite</span>
+                <span>
+                  <input
+                    className="m-2 btn btn-dark"
+                    type="button"
+                    value="Favorite"
+                    onClick={handleFavorite}
+                  />
+                </span>
                 <Link
                   to={`/movies/edit/${movie.id}`}
                   className="m-2 btn btn-success"

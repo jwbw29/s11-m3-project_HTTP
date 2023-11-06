@@ -81,10 +81,10 @@ You should now have your app running in Chrome on `http://localhost:3000`
 
 ### Stretch goals
 
-- Make the added DeleteMovieModal appear and be reacted to before deletion occurs.
-- Add in `addToFavorites` functionality. When the favorite button is pushed in the `Movie` component, make sure that when the favorite button is pushed, the id and name of the currently viewed into the favorite state slice in `App.js.`
-- For extra credit, ensure that only unique movies can be added as favorites. Consider the `.find` method for arrays.
-- Add in some Style!
+- [ ] Make the added DeleteMovieModal appear and be reacted to before deletion occurs.
+- [x] Add in `addToFavorites` functionality. When the favorite button is pushed in the `Movie` component, make sure that when the favorite button is pushed, the id and name of the currently viewed into the favorite state slice in `App.js.`
+- [ ] For extra credit, ensure that only unique movies can be added as favorites. Consider the `.find` method for arrays.
+- [ ] Add in some Style!
 
 ### Resource: API documentation
 

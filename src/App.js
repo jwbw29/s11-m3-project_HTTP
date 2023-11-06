@@ -7,7 +7,7 @@ import Movie from "./components/Movie";
 import MovieHeader from "./components/MovieHeader";
 import EditMovieForm from "./components/EditMovieForm";
 import FavoriteMovieList from "./components/FavoriteMovieList";
-import AddMovieForm from './components/AddMovieForm';
+import AddMovieForm from "./components/AddMovieForm";
 
 import axios from "axios";
 
@@ -27,8 +27,6 @@ const App = (props) => {
       });
   }, []);
 
-  const addToFavorites = (movie) => {};
-
   return (
     <div>
       <nav className="navbar navbar-dark bg-dark">
@@ -43,25 +41,22 @@ const App = (props) => {
           <Routes>
             <Route
               path="movies/edit/:id"
-              element={
-                <EditMovieForm
-                  setMovies={setMovies}
-                  addToFavorites={addToFavorites}
-                />
-              }
+              element={<EditMovieForm setMovies={setMovies} />}
             />
             <Route
               path="movies/add"
-              element={
-                <AddMovieForm
-                  setMovies={setMovies}
-                />
-              }
+              element={<AddMovieForm setMovies={setMovies} />}
             />
 
             <Route
               path="movies/:id"
-              element={<Movie setMovies={setMovies} />}
+              element={
+                <Movie
+                  setMovies={setMovies}
+                  setFavoriteMovies={setFavoriteMovies}
+                  favoriteMovies={favoriteMovies}
+                />
+              }
             />
 
             <Route path="movies" element={<MovieList movies={movies} />} />
