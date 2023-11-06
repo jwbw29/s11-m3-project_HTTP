@@ -59,11 +59,11 @@ You should now have your app running in Chrome on `http://localhost:3000`
 
 - [x] Build an event handler that makes a request to delete the currently viewed movie. Observe what is returned from the request.
 
-- [ ] You will once again need to keep the server and state data in sync. In `App.js`, complete the `deleteMovie` method so that it receives an id, filters out any movie with that id and sets state to that resultant movie list.
+- [x] You will once again need to keep the server and state data in sync. In `App.js`, complete the `deleteMovie` method so that it receives an id, filters out any movie with that id and sets state to that resultant movie list.
 
-- [ ] Pass `deleteMovie` into the appropriate component.
+- [x] Pass `deleteMovie` into the appropriate component.
 
-- [ ] Run `deleteMovie` on the currently selected movie when your delete request is complete and redirect the user to the `/movies` route.
+- [x] Run `deleteMovie` on the currently selected movie when your delete request is complete and redirect the user to the `/movies` route.
 
 #### Adding a Movie
 
