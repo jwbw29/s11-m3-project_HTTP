@@ -8,6 +8,8 @@ api.use(express.json());
 
 api.use(cors());
 
+//// CRUD - Create (1), Read (2), Update (1), Delete (1) ////
+
 api.get('/api/movies', (req, res) => {
   res.json(Data.getAll())
 })
