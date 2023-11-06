@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import axios from "axios";
 
-const EditMovieForm = (props) => {
+const AddMovieForm = (props) => {
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -34,10 +34,11 @@ const EditMovieForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:9000/api/movies/${id}`, movie)
+      .post(`http://localhost:9000/api/movies`, movie)
       .then((res) => {
+        console.log(res.data);
         setMovies(res.data);
-        navigate(`/movies/${movie.id}`);
+        navigate(`/movies/${res.data.at(-1).id}`); // FIGURED OUT HOW TO GRAB THE ID BY MYSELF
       })
       .catch((err) => {
         console.log(err.response);
@@ -51,9 +52,7 @@ const EditMovieForm = (props) => {
       <div className="modal-content">
         <form onSubmit={handleSubmit}>
           <div className="modal-header">
-            <h4 className="modal-title">
-              Editing <strong>{title}</strong>
-            </h4>
+            <h4 className="modal-title">Add New Movie</h4>
           </div>
           <div className="modal-body">
             <div className="form-group">
@@ -118,4 +117,4 @@ const EditMovieForm = (props) => {
   );
 };
 
-export default EditMovieForm;
+export default AddMovieForm;

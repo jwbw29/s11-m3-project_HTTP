@@ -7,6 +7,7 @@ import Movie from "./components/Movie";
 import MovieHeader from "./components/MovieHeader";
 import EditMovieForm from "./components/EditMovieForm";
 import FavoriteMovieList from "./components/FavoriteMovieList";
+import AddMovieForm from './components/AddMovieForm';
 
 import axios from "axios";
 
@@ -25,8 +26,6 @@ const App = (props) => {
         console.log(err);
       });
   }, []);
-
-  const deleteMovie = (id) => {};
 
   const addToFavorites = (movie) => {};
 
@@ -48,6 +47,14 @@ const App = (props) => {
                 <EditMovieForm
                   setMovies={setMovies}
                   addToFavorites={addToFavorites}
+                />
+              }
+            />
+            <Route
+              path="movies/add"
+              element={
+                <AddMovieForm
+                  setMovies={setMovies}
                 />
               }
             />
